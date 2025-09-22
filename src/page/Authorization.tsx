@@ -1,15 +1,13 @@
 // Authorization.tsx
 import { Box, Button, Checkbox, Container, Snackbar, Typography } from "@mui/material";
-import { useForm } from "react-hook-form";
 import Input from "../components/Input";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { authorization } from "../validation/validation";
 import type { FormValues } from "../types/form";
 import { useAuthorizationMutation } from "../api/postAuthorization";
 import { useDispatch } from "react-redux";
 import { addAccounts } from "../redux/slice/accountsSlice";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthForm } from "../hooks/useAuthForm";
 
 function Authorization() {
   const [postApiClient, { error }] = useAuthorizationMutation();
@@ -19,14 +17,10 @@ function Authorization() {
   const dispatch = useDispatch();
 
   const {
-    register,
-    formState: { errors, isValid },
     handleSubmit,
+    formState: { isValid },
     reset,
-  } = useForm<FormValues>({
-    resolver: yupResolver(authorization),
-    mode: "onChange",
-  });
+  } = useAuthForm();
 
   const onSubmit = async (data: FormValues) => {
     try {
@@ -36,10 +30,10 @@ function Authorization() {
       navigate("/");
       reset();
     } catch (err) {
-      console.log(error)
+      console.log(error);
       const message = (err as { data?: { message?: string } })?.data?.message || "Ошибка входа";
-      setErrorMessage(message)
-      setOpenSnackbar(true)
+      setErrorMessage(message);
+      setOpenSnackbar(true);
     }
   };
 
@@ -63,8 +57,8 @@ function Authorization() {
             Вход в учётную запись
           </Typography>
           <Container disableGutters sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <Input type="email" text="E-mail" placeholder="Введите свой e-mail" register={register} errors={errors} />
-            <Input type="password" text="Пароль" placeholder="Введите пароль" register={register} errors={errors} />
+            <Input type="email" text="E-mail" placeholder="Введите свой e-mail" />
+            <Input type="password" text="Пароль" placeholder="Введите пароль" />
             <Container disableGutters sx={{ display: "flex", alignItems: "center", gap: "12px", height: "24px" }}>
               <Checkbox sx={{ width: "16px" }} />
               <Typography variant="h1" sx={{ fontSize: "16px", lineHeight: "24px" }}>
