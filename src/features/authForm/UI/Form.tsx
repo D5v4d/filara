@@ -10,6 +10,7 @@ import { addAccounts } from "../store/slice/accountsSlice";
 import { ButtonField } from "./ButtonField";
 import { CheckboxField } from "./CheckboxField";
 import { InputField } from "./InputField";
+import { FormProvider } from "react-hook-form";
 
 export const Form = () => {
   const [postApiClient, { error }] = useAuthorizationMutation();
@@ -18,7 +19,13 @@ export const Form = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { handleSubmit, reset, formState: { isValid } } = useAuthForm();
+  const form = useAuthForm(); // так как нельзя просто вызывать useForm несколько раз и брать методы одного вызова, потому что каждый вызов создаёт новый, независимый экземпляр формы.
+  // Для того что бы мы могли брать из одной формы методы в разных компонентах сушествуют FormProvider и useFormContext.
+
+  const {
+    handleSubmit,
+    formState: { isValid },
+  } = form;
 
   const onSubmit = async (data: IForm) => {
     try {
@@ -26,7 +33,6 @@ export const Form = () => {
       localStorage.setItem("accountstoken", result.access_token);
       dispatch(addAccounts(result.user_data));
       navigate("/");
-      reset();
     } catch (err) {
       console.log(error);
       const message = (err as { data?: { message?: string } })?.data?.message || "Ошибка входа";
@@ -36,30 +42,33 @@ export const Form = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Container
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            borderRadius: "8px",
-            gap: "24px",
-            width: "514px",
-            boxShadow: "0 4px 9px rgba(76, 93, 112, 0.3)",
-            p: "32px 24px",
-            border: error && "1px solid red",
-          }}
-        >
-          <Typography variant="h1" sx={{ fontSize: "24px" }}>
-            Вход в учётную запись
-          </Typography>
-          <Container disableGutters sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <InputField type="email" text="E-mail" placeholder="Введите свой e-mail" />
-            <InputField type="password" text="Пароль" placeholder="Введите пароль" />
-            <CheckboxField />
+      <FormProvider {...form}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              borderRadius: "8px",
+              gap: "24px",
+              width: "514px",
+              boxShadow: "0 4px 9px rgba(76, 93, 112, 0.3)",
+              p: "32px 24px",
+              border: error && "1px solid red",
+            }}
+          >
+            <Typography variant="h1" sx={{ fontSize: "24px" }}>
+              Вход в учётную запись
+            </Typography>
+            <Container disableGutters sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <InputField type="email" text="E-mail" placeholder="Введите свой e-mail" />
+              <InputField type="password" text="Пароль" placeholder="Введите пароль" />
+              <CheckboxField />
+            </Container>
+            <ButtonField isValid={isValid} />
           </Container>
-          <ButtonField isValid={isValid}/>
-        </Container>
-      </form>
+        </form>
+      </FormProvider>
+
       <Snackbar
         open={openSnackbar}
         autoHideDuration={2000}
