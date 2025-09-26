@@ -1,9 +1,13 @@
 import { Container, InputBase, InputLabel, Typography } from "@mui/material";
 import type { IInputField } from "../types/InputField";
-import { useAuthForm } from "../hooks/useAuthForm";
+import { useFormContext } from "react-hook-form";
+import type { IForm } from "../types/form";
 
 export const InputField = ({ type, text, placeholder }: IInputField) => {
-  const {register, formState: { errors }} = useAuthForm();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<IForm>(); // это хук позволяет получить данные из провайдера FormProvider
 
   return (
     <Container sx={{ height: "100px" }} disableGutters>
@@ -34,4 +38,4 @@ export const InputField = ({ type, text, placeholder }: IInputField) => {
       {errors && <Typography sx={{ color: "red", mt: "10px" }}>{errors[type]?.message}</Typography>}
     </Container>
   );
-}
+};
