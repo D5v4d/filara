@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { AccountsState } from "../../types/accountsSlice";
+import type { IUser } from "../../types/accountsSlice";
+
+const user = JSON.parse(localStorage.getItem('user') || 'null');
 
 const accountsSlice = createSlice({
   name: "accounts",
   initialState: {
-    accounts: {},
-  } as AccountsState,
+    user,
+  } as IUser,
   reducers: {
     addAccounts(state, action) {
-      state.accounts = action.payload
+      state.user = action.payload
     },
   },
 });

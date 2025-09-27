@@ -1,1 +1,1 @@
-export {AuthWidget} from './components/AuthWidget'
+export {AuthWidget} from './UI/AuthWidget'
