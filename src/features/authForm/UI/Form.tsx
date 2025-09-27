@@ -1,12 +1,10 @@
 // Authorization.tsx
 import { Container, Snackbar, Typography } from "@mui/material";
 import type { IForm } from "../types/form";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthForm } from "../hooks/useAuthForm";
 import { useAuthorizationMutation } from "../api/postAuth";
-import { addAccounts } from "../store/slice/accountsSlice";
 import { ButtonField } from "./ButtonField";
 import { CheckboxField } from "./CheckboxField";
 import { InputField } from "./InputField";
@@ -17,7 +15,6 @@ export const Form = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const form = useAuthForm(); // так как нельзя просто вызывать useForm несколько раз и брать методы одного вызова, потому что каждый вызов создаёт новый, независимый экземпляр формы.
   // Для того что бы мы могли брать из одной формы методы в разных компонентах сушествуют FormProvider и useFormContext.
@@ -30,8 +27,8 @@ export const Form = () => {
   const onSubmit = async (data: IForm) => {
     try {
       const result = await postApiClient(data).unwrap();
-      localStorage.setItem("accountstoken", result.access_token);
-      dispatch(addAccounts(result.user_data));
+      localStorage.setItem('accountstoken', result.access_token);
+      localStorage.setItem('user', JSON.stringify(result.user_data));
       navigate("/");
     } catch (err) {
       console.log(error);
