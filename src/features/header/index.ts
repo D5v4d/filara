@@ -1,2 +1,2 @@
 export {BtnExit} from './UI/BtnExit'
-export {store} from "./store/store";
+export {accountsSlice} from "./slice/userSlice";
