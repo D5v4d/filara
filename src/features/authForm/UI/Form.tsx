@@ -27,11 +27,12 @@ export const Form = () => {
   const onSubmit = async (data: IForm) => {
     try {
       const result = await postApiClient(data).unwrap();
+      console.log(result)
       localStorage.setItem('accountstoken', result.access_token);
       localStorage.setItem('user', JSON.stringify(result.user_data));
-      navigate("/");
+      navigate("/seminars");
     } catch (err) {
-      console.log(error);
+      console.log(err);
       const message = (err as { data?: { message?: string } })?.data?.message || "Ошибка входа";
       setErrorMessage(message);
       setOpenSnackbar(true);

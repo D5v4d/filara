@@ -1,12 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { IUser } from "../../types/accountsSlice";
-
-const user = JSON.parse(localStorage.getItem('user') || 'null');
+import type { IUser } from "../types/accountsSlice";
 
 const accountsSlice = createSlice({
   name: "accounts",
   initialState: {
-    user,
+    user: {},
   } as IUser,
   reducers: {
     addAccounts(state, action) {
@@ -17,4 +15,4 @@ const accountsSlice = createSlice({
 
 export const { addAccounts } = accountsSlice.actions;
 
-export default accountsSlice.reducer;
+export {accountsSlice};

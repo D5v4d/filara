@@ -1,4 +1,4 @@
-import { AuthWidget } from "../../widgets/authForm";
+import { AuthWidget } from "../widgets/authForm";
 
 export const AuthForm = () => {
   return <AuthWidget />;
