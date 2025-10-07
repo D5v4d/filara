@@ -1,7 +1,9 @@
-function Seminars() {
+import { Seminars } from "../widgets/seminars";
+
+function Seminar() {
   return (
-    <div>Seminars</div>
+    <Seminars></Seminars>
   );
 }
 
-export default Seminars;
+export default Seminar;

@@ -1,0 +1,5 @@
+export {seminarsSlice} from './slice/seminarsSlice'
+export {Search} from './UI/Search'
+export {Pagination} from './UI/Pagination'
+export {TabContent} from './UI/tab/TabContext'
+export {dataSidebar, useGetSeminarsQuery} from './api/dataSidebar'

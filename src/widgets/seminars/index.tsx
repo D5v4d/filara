@@ -1,0 +1,1 @@
+export {Seminars} from './UI/Seminars'
