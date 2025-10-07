@@ -1,6 +1,7 @@
 import { Drawer } from "@mui/material";
 import { ListItemBtn } from "../../../features/sidebar";
 import { cssDrawer } from "../css/CssSidebar";
+import { Logo } from "../../../shared";
 
 export const Sidebar = () => {
   return (
@@ -15,7 +16,7 @@ export const Sidebar = () => {
         },
       }}
     >
-      <img src="/logo.svg" width={114} height={61} alt="logo" />
+      <Logo width="114px" height="61px"/>
       <ListItemBtn />
     </Drawer>
   );

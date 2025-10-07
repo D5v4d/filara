@@ -7,15 +7,19 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": " json-server src/server/db.json"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@hookform/resolvers": "^5.2.2",
+    "@mui/icons-material": "^7.3.4",
+    "@mui/lab": "^7.0.0-beta.17",
     "@mui/material": "^7.3.2",
     "@reduxjs/toolkit": "^2.9.0",
     "axios": "^1.12.2",
+    "json-server": "^1.0.0-beta.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.62.0",

@@ -22,7 +22,7 @@ export const PrivateRoute = () => {
     >
       <Header />
       <Sidebar />
-      <Card component="main" sx={{ display: "flex", paddingTop: "24px", height: "872px", marginTop: "24px" }}>
+      <Card component="main" sx={{ paddingTop: "24px", paddingX: '24px', minHeight: "872px", marginTop: "24px" }}>
         <Outlet /> {/* Сюда рендерится дочерний маршрут: <Main />, <Profile /> и т.д. */}
       </Card>
     </Container>
