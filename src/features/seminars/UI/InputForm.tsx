@@ -19,7 +19,7 @@ export const InputForm = ({ type, text, placeholder }: IInputField) => {
       <InputBase
         id={type}
         sx={{
-          color: "#737680",
+          color: "#37393D",
           lineHeight: "20px",
           width: "100%",
           height: type === "description" ? "60px" : "40px",

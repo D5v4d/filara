@@ -78,7 +78,7 @@ export const EditingAndAdding = () => {
                   Сохранить
                 </ButtonBase>
               </Box>
-              <Box sx={{ p: "16px 40px" }}>
+              <Box sx={{ p: "16px 40px", display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <InputForm type="title" text="Название*" placeholder="Название семинара" />
                 <InputForm type="description" text="Описание*" placeholder="Опишите семинар" />
                 <InputLabels name="speaker" placeholder="ФИО" title="Спикер" />
