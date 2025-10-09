@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authorizationApi } from "../authForm/api/postAuth";
 import { accountsSlice } from "../header";
-import {  dataSidebar, seminarsSlice, } from "../seminars";
+import { dataSidebar, seminarsSlice } from "../seminars";
 
 export const store = configureStore({
   reducer: {

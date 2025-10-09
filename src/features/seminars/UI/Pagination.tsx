@@ -69,14 +69,14 @@ export const Pagination = () => {
           onClick={backPage}
           sx={{ width: "32px", p: "7px", borderRight: "1px solid #D0D3DA", bgcolor: page <= 1 ? "#F8F8FA" : "" }}
         >
-          <img src="/arrow-left.svg" alt="left" />
+          <img src="/seminar/arrow-left.svg" alt="left" />
         </ButtonBase>
         <ButtonBase
           disabled={page === pageLimit}
           onClick={forwardPage}
           sx={{ width: "32px", p: "7px", bgcolor: page === pageLimit ? "#F8F8FA" : "" }}
         >
-          <img src="/arrow-right.svg" alt="right" />
+          <img src="/seminar/arrow-right.svg" alt="right" />
         </ButtonBase>
       </Box>
     </Box>

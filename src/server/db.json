@@ -256,15 +256,19 @@
       "status": "history",
       "likes": 33,
       "isLikes": true
+    },
+    {
+      "id": "10",
+      "title": "aca",
+      "description": "acac",
+      "date": "2025-10-10",
+      "time": "16:21",
+      "userId": "1",
+      "isLikes": false,
+      "status": "application"
     }
   ],
   "brands": [
-    {
-      "id": "4c5d671d-4b68-4a8a-aece-272f91c6d91f",
-      "name": "Academie",
-      "icon": "https://picsum.photos/seed/27388458-d4c8-4d91-810c-df2c763cd4a9.jpg/300/200",
-      "margin": 100
-    },
     {
       "id": "9c44f061-6a7a-40a9-9c5c-b5c512bb5048",
       "name": "V45",

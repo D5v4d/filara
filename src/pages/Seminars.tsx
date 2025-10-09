@@ -2,7 +2,7 @@ import { Seminars } from "../widgets/seminars";
 
 function Seminar() {
   return (
-    <Seminars></Seminars>
+    <Seminars />
   );
 }
 

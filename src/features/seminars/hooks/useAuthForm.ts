@@ -16,12 +16,12 @@ const DEFAULT_VALUES: IForm = {
 
 export const useAuthForm = () => {
   const form = useForm<IForm>({
-    defaultValues: DEFAULT_VALUES,  // дефолтное значени содержимого Value, что бы когда была очиста стирались все поля. Бывает что стираются не все.
+    defaultValues: DEFAULT_VALUES, // дефолтное значени содержимого Value, что бы когда была очистка стирались все поля. Бывает что стираются не все.
     resolver: yupResolver(editingAdding),
     mode: "onChange",
   });
 
-  return form; // или деструктурируй и верни нужные методы
+  return form;
 };
 
 // const {
