@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
-import { BtnExit } from "../../../features/header";
-import { TheUser } from "../../../features/header/UI/TheUser";
+import { BtnExit, TheUser } from "../../../features/header";
 
 export const Header = () => {
   return (

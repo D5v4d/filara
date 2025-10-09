@@ -11,10 +11,6 @@ export const dataSidebar = createApi({
       query: () => `seminars`,
       providesTags: ["Seminar"],
     }),
-    getUsers: build.query({
-      query: () => "users",
-      
-    }),
     deleteSeminar: build.mutation({
       query: (id) => ({
         url: `seminars/${id}`,
@@ -37,6 +33,9 @@ export const dataSidebar = createApi({
         body,
       }),
       invalidatesTags: ["Seminar"],
+    }),
+    getUsers: build.query({
+      query: () => "users",
     }),
   }),
 });

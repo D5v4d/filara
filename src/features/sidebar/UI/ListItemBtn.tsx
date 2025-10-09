@@ -15,18 +15,18 @@ export const ListItemBtn = () => {
 
   const navigate = useNavigate();
   const items = [
-    { imgUrl: "/application.svg", text: "Заявки", nav: "/applications" },
-    { imgUrl: "/products.svg", text: "Продукты", nav: "/products" },
-    { imgUrl: "/users.svg", text: "Пользователи", nav: "/users" },
-    { imgUrl: "/categories.svg", text: "Категории", nav: "/categories" },
-    { imgUrl: "/cities.svg", text: "Города", nav: "/cities" },
-    { imgUrl: "/brands.svg", text: "Бренды", nav: "/brands" },
-    { imgUrl: "/protocols.svg", text: "Протоколы", nav: "/protocols" },
-    { imgUrl: "/orders.svg", text: "Заказы", nav: "/orders" },
-    { imgUrl: "/banners.svg", text: "Баннеры", nav: "/banners" },
-    { imgUrl: "/seminars.svg", text: "Семинары", nav: "/seminars" },
-    { imgUrl: "/promo-codes.svg", text: "Промокоды", nav: "/promo-codes" },
-    { imgUrl: "/settings.svg", text: "Настройки", nav: "/settings" },
+    { imgUrl: "/sidebar/users.svg", text: "Заявки", nav: "/applications" },
+    { imgUrl: "/sidebar/products.svg", text: "Продукты", nav: "/products" },
+    { imgUrl: "/sidebar/users.svg", text: "Пользователи", nav: "/users" },
+    { imgUrl: "/sidebar/categories.svg", text: "Категории", nav: "/categories" },
+    { imgUrl: "/sidebar/cities.svg", text: "Города", nav: "/cities" },
+    { imgUrl: "/sidebar/brands.svg", text: "Бренды", nav: "/brands" },
+    { imgUrl: "/sidebar/protocols.svg", text: "Протоколы", nav: "/protocols" },
+    { imgUrl: "/sidebar/orders.svg", text: "Заказы", nav: "/orders" },
+    { imgUrl: "/sidebar/banners.svg", text: "Баннеры", nav: "/banners" },
+    { imgUrl: "/sidebar/seminars.svg", text: "Семинары", nav: "/seminars" },
+    { imgUrl: "/sidebar/promo-codes.svg", text: "Промокоды", nav: "/promo-codes" },
+    { imgUrl: "/sidebar/settings.svg", text: "Настройки", nav: "/settings" },
   ];
 
   const activeNav = (nav: string) => {

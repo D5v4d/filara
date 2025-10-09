@@ -1,7 +1,7 @@
-function Brands() {
-  return (
-    <div>Brands</div>
-  );
+import { Brands } from "../widgets/brands";
+
+function Brand() {
+  return <Brands />;
 }
 
-export default Brands;
+export default Brand;

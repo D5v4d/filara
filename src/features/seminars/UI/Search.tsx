@@ -14,10 +14,10 @@ export const Search = () => {
   return (
     <Box display="flex" justifyContent="end" width="100%">
       <Box sx={searchBox}>
-        <img src="/searsh.svg" alt="searsh" />
+        <img src="/seminar/searsh.svg" alt="searsh" />
         <InputBase onChange={onChange} sx={input} placeholder="Поиск по семинарам"></InputBase>
         <Button sx={btn}>
-          <img src="/cross.svg" alt="cross" />
+          <img src="/seminar/cross.svg" alt="cross" />
         </Button>
       </Box>
     </Box>
