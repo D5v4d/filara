@@ -180,18 +180,6 @@
       "status": "upcoming"
     },
     {
-      "id": "4",
-      "title": "Новые методы омоложения",
-      "description": "Инъекционные и неинъекционные технологии, подбор методики.",
-      "date": "12.02.2025",
-      "time": "09:00",
-      "photo": "https://picsum.photos/id/4/750/730",
-      "userId": 4,
-      "status": "history",
-      "likes": 26,
-      "isLikes": true
-    },
-    {
       "id": "5",
       "title": "Инновации в контурной пластике",
       "description": "Современные филлеры, техника введения и особенности работы.",
@@ -266,15 +254,19 @@
       "userId": "1",
       "isLikes": false,
       "status": "application"
+    },
+    {
+      "id": "10",
+      "title": "ым",
+      "description": "ымым",
+      "date": "2025-10-16",
+      "time": "16:38",
+      "userId": "1",
+      "isLikes": false,
+      "status": "application"
     }
   ],
   "brands": [
-    {
-      "id": "9c44f061-6a7a-40a9-9c5c-b5c512bb5048",
-      "name": "V45",
-      "icon": "https://picsum.photos/seed/c0f061fe-8e64-4620-835a-517ce44f1c5d.jpg/300/200",
-      "margin": 60
-    },
     {
       "id": "7aaaeaee-6e50-4225-9ab2-15da6d802ba7",
       "name": "Laboratory Cytolife",

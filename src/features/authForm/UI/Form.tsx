@@ -27,7 +27,6 @@ export const Form = () => {
   const onSubmit = async (data: IForm) => {
     try {
       const result = await postApiClient(data).unwrap();
-      console.log(result)
       localStorage.setItem('accountstoken', result.access_token);
       localStorage.setItem('user', JSON.stringify(result.user_data));
       navigate("/seminars");
